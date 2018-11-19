@@ -1,0 +1,20 @@
+<div>
+    <a style='text-decoration: underline' routerLink='/' routerLinkActive='active' class=''>Home</a>
+    <h5 style='margin-top: 20px;'>Add a new author:</h5>
+</div>
+<form (submit)="onSubmitAddAuthor()">
+
+    <div class='form-group row'>
+        Name: <input style='margin-left: 10px;' type='text' name='newAuthor.name' [(ngModel)]='newAuthor.name' />
+    </div>
+    
+    <div class='form-group row'>
+        <input style='margin-left: 15px;' class='btn btn-primary' type='submit' value='Submit' />
+        <a style='margin-left: 15px;' routerLink='/' routerLinkActive='active' class='btn btn-secondary'>Cancel</a>
+    </div>
+    {{errors.errors.name.message}}
+    <!-- {{errors.errors.name.message}} -->
+    <!-- {{errors.errors.name.message}} -->
+
+    
+</form>

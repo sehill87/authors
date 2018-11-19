@@ -1,0 +1,17 @@
+<a style='text-decoration: underline' routerLink='/new' routerLinkActive='active' class=''>Add an author</a>
+<table class='table table-striped'>
+  <thead class='thead-dark'>
+    <tr>
+      <th scope='col'>Author</th>
+      <th scope='col'>Actions available</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let author of authors">
+    <td>{{ author.name }}</td>
+    <td>
+      
+      <button style='margin-left: 15px;' class='btn btn-success btn-sm' [routerLink]="['/edit/', author._id]">Update</button>
+      <button style='margin-left: 15px;' class='btn btn-warning btn-sm' (click)="deleteAuthorFromService(author._id)">Delete</button>
+    </td>
+  </tbody>
+</table>

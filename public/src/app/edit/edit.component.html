@@ -1,0 +1,15 @@
+<div class="container jumbotron" style="text-align:left">
+  <a style='text-decoration: underline' routerLink='/' routerLinkActive='active' class=''>Home</a>
+  <h5>Edit this author</h5>
+  <form *ngIf='editAuthor._id' (submit)="onSubmitEditAuthor()">
+    <div class='form-group row'>
+      Name: <input style='margin-left: 10px;' class='form-control mx-sm-3' type='text' name='editAuthor.name' [(ngModel)]='editAuthor.name' />
+
+    </div>
+    <div class='form-group row'>
+      <input style='margin-left: 15px;'class='btn btn-primary' type='submit' value='Update' />
+      <a style='margin-left: 15px;' routerLink='/' routerLinkActive='active' class='btn btn-warning'>Cancel</a>
+    </div>
+    {{errors.errors.name.message}}
+  </form>
+</div>
